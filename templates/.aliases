@@ -14,3 +14,16 @@ up() {
   done
   cd $str
 }
+
+# TouristEye
+alias ssh-edev="ssh -o TCPKeepAlive=yes -i /Users/jmmerino/.ec2/te-key-pair.pem ubuntu@50.16.239.220"
+alias ssh-eprod="ssh -o TCPKeepAlive=yes -i /Users/jmmerino/.ec2/te-key-pair.pem ubuntu@54.235.101.79"
+
+# LonelyPlanet
+alias assets='rake assets:clean assets:precompile'
+alias cucumber_pry='CUCUMBER_PRY=1 cucumber'
+alias ba='bundle && assets'
+alias bat='bundle && assets && test'
+alias test='rspec && rake "parallel:features[2]"'
+alias parallel_foreman='rm -rf log/* && find tmp -type f ! -iname "parallel*" -delete && foreman start -m="redis=4,es_test=4"'
+alias be='bundle exec'

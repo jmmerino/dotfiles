@@ -10,7 +10,7 @@
         "value": "finder_selection"
     },
     {
-        "checked": true,
+        "checked": false,
         "name": "Automatically open a new window when a volume is mounted",
         "value": "finder_window"
     },
@@ -25,7 +25,7 @@
         "value": "finder_path"
     },
     {
-        "checked": true,
+        "checked": false,
         "name": "Enable AirDrop over Ethernet and on unsupported Macs running Lion",
         "value": "finder_airdrop"
     },

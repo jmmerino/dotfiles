@@ -20,7 +20,7 @@
         "value": "general_dstore"
     },
     {
-        "checked": false,
+        "checked": true,
         "name": "Enable natural (Lion-style) scrolling",
         "value": "general_scroll"
     },
@@ -35,12 +35,12 @@
         "value": "general_dashboard"
     },
     {
-        "checked": true,
+        "checked": false,
         "name": "Enable HiDPI display modes (requires restart)",
         "value": "general_hidpi"
     },
     {
-        "checked": true,
+        "checked": false,
         "name": "Enable icons for hard drives, servers, and removable media on the desktop",
         "value": "general_icons"
     },

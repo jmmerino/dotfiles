@@ -42,4 +42,4 @@ eval "$(rbenv init -)"
 TERM=xterm-256color
 
 # -- Update --------------------------------------------------------------------
-dotfiles
+# dotfiles

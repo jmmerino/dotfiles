@@ -104,17 +104,17 @@ module.exports = function(grunt) {
                     questions: [
                         {
                             config: 'config.osx.computername',
-                            default: 'eduardo',
+                            default: 'jmmerino',
                             message: 'Which computer name would you like to use?'
                         },
                         {
                             config: 'config.git.name',
-                            default: 'Eduardo Lundgren',
+                            default: 'Jesus Merino',
                             message: 'Which Git name would you like to use?'
                         },
                         {
                             config: 'config.git.email',
-                            default: 'eduardo.lundgren@liferay.com',
+                            default: 'jmmerino@gmail.com',
                             message: 'Which Git email would you like to use?'
                         },
                         {
@@ -129,7 +129,7 @@ module.exports = function(grunt) {
                         },
                         {
                             config: 'config.zsh.theme_oh_my_zsh',
-                            default: 'dracula',
+                            default: 'avit',
                             message: 'Which Oh My Zsh theme would you like to use?'
                         },
                         {
@@ -337,7 +337,7 @@ module.exports = function(grunt) {
 
         // -- Exec -------------------------------------------------------------
 
-        shell: {
+        exec: {
 
             osx: {
                 command: 'source <%= config.osx.path_osx %>',
@@ -363,37 +363,37 @@ module.exports = function(grunt) {
                 }
             },
 
-            theme_alfred: {
-                command: '[ -d "/Applications/Alfred 2.app" ] && open <%= config.themes.path_dracula %>/alfred/Dracula.alfredappearance || echo "Alfred App is not installed"',
-                options: {
-                     stdout: true,
-                     stderr: true
-                }
-            },
+            // theme_alfred: {
+            //     command: '[ -d "/Applications/Alfred 2.app" ] && open <%= config.themes.path_dracula %>/alfred/Dracula.alfredappearance || echo "Alfred App is not installed"',
+            //     options: {
+            //          stdout: true,
+            //          stderr: true
+            //     }
+            // },
 
-            theme_iterm: {
-                command: '[ -d "/Applications/iTerm.app" ] && open <%= config.themes.path_dracula %>/iterm/Dracula.itermcolors || echo "iTerm App is not installed"',
-                options: {
-                     stdout: true,
-                     stderr: true
-                }
-            },
+            // theme_iterm: {
+            //     command: '[ -d "/Applications/iTerm.app" ] && open <%= config.themes.path_dracula %>/iterm/Dracula.itermcolors || echo "iTerm App is not installed"',
+            //     options: {
+            //          stdout: true,
+            //          stderr: true
+            //     }
+            // },
 
-            node_latest: {
-                command: 'sudo n latest',
-                options: {
-                    stdout: true,
-                    stderr: true
-                }
-            },
+            // node_latest: {
+            //     command: 'sudo node latest',
+            //     options: {
+            //         stdout: true,
+            //         stderr: true
+            //     }
+            // },
 
-            node_stable: {
-                command: 'sudo n stable',
-                options: {
-                    stdout: true,
-                    stderr: true
-                }
-            },
+            // node_stable: {
+            //     command: 'sudo node stable',
+            //     options: {
+            //         stdout: true,
+            //         stderr: true
+            //     }
+            // },
 
             ruby_compass: {
                 command: 'sudo gem install compass',
@@ -419,29 +419,29 @@ module.exports = function(grunt) {
                 }
             },
 
-            brew: {
-                command: 'ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"',
-                options: {
-                    stdout: true,
-                    stderr: true
-                }
-            },
+            // brew: {
+            //     command: 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"',
+            //     options: {
+            //         stdout: true,
+            //         stderr: true
+            //     }
+            // },
 
-            brew_tig: {
-                command: 'brew install tig'
-            },
+            // brew_tig: {
+            //     command: 'brew install tig'
+            // },
 
-            brew_ngrok: {
-                command: 'brew install ngrok'
-            },
+            // brew_ngrok: {
+            //     command: 'brew install ngrok'
+            // },
 
-            vim_plugins: {
-                command: 'vim +PluginInstall +qall'
-            },
+            // vim_plugins: {
+            //     command: 'vim +PluginInstall +qall'
+            // },
 
-            git_extras: {
-                command: '(cd /tmp && git clone --depth 1 https://github.com/visionmedia/git-extras.git && cd git-extras && sudo make install)'
-            }
+            // git_extras: {
+            //     command: '(cd /tmp && git clone --depth 1 https://github.com/visionmedia/git-extras.git && cd git-extras && sudo make install)'
+            // }
 
         }
 
@@ -455,10 +455,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-git');
     grunt.loadNpmTasks('grunt-prompt');
-    grunt.loadNpmTasks('grunt-shell');
+    grunt.loadNpmTasks('grunt-exec');
     grunt.loadNpmTasks('grunt-symlink');
     grunt.loadNpmTasks('grunt-template');
 
-    grunt.registerTask('setup', ['banner', 'prompt', 'clean', 'template', 'gitclone', 'shell', 'symlink']);
+    grunt.registerTask('setup', ['banner', 'prompt', 'clean', 'template', 'gitclone', 'exec', 'symlink']);
 
 };
